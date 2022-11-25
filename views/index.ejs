@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixibrary</title>
+   <link rel="icon" href="https://pixibrary.pixelpasta.xyz/book.png">
+    <style>
+        body{background-image: url('/410244.png');
+        background-repeat: no-repeat;
+  background-attachment: fixed;
+background-size: cover;}
+        </style>
+</head>
+
+<body style="background-image: url(/410244.png);">
+    <h1 style="text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;color: black;text-decoration: underline"> Pixibrary </h1>
+    </h1>
+    <h2 style="text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;color: black;top-margin: 2px"> Information About <%= name %> </h2>
+ <center>   <img style="border: 4px solid black;" src="<%= bg %>"> <br>
+<table style="border-style: solid; border-color: black; background-color: grey; width: 50%" >
+    <tr> 
+        <th> <h1 style="text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;color: black; top-margin: 0px; bottom-margin: 0px"> <b>🔖Categories:</b> </h1> <ul style="color: black; text-align: left"> 
+ <% if (ing) {%>
+            <% for(var i=0; i<ing.length; i++) {%>
+                <li><%= ing[i] %></li>
+             <% } %>
+             <% } %>
+            </th>
+    </tr>
+</table>
+<br>
+<table  style="border-style: solid; border-color: black; background-color: grey; width: 50%">
+    <tr> 
+        <th> <h1 style="text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;color: black; top-margin: 0px; bottom-margin: 0px"> <b>📝Authors:</b> </h1> <ul style="color: black; text-align: left"> 
+          <% if (auth) {%>
+            <% for(var i=0; i<auth.length; i++) {%>
+                <li><%= auth[i] %></li>
+             <% } %>
+                 <% } %>
+            </th>
+    </tr>
+</table>
+<br>
+<table  style="border-style: solid; border-color: black; background-color: grey; width: 50%">
+    <tr> 
+        <th> <h1 style="text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;color: black; top-margin: 0px; bottom-margin: 0px"> <b>📕Description:</b> </h1> <ul style="color: black; text-align: left"> 
+           <%= about %>
+            </th>
+    </tr>
+</table>
+<br>
+<table  style="border-style: solid; border-color: black; background-color: grey; width: 50%">
+    <tr> 
+        <th> <h1 style="text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;color: black; top-margin: 0px; bottom-margin: 0px"> <b>📰Publication:</b> </h1> <ul style="color: black; text-align: left"> 
+         Publisher: <%= publ %> <br>
+         Publication date: <%= public %> <br>
+         Number of Pages: <%= pub %>
+            </th>
+    </tr>
+</table> <h1> <mark style="background-color: white;"><a href="https://pixibrary.pixelpasta.xyz"> ⬅ Search Again </a>
+<hr color="white"> 
+    Website: <a href="https://pixelpasta.github.io" style="color:black">pixelpasta.github.io
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "recipix",
+  "version": "1.0.0",
+  "description": "A simple recipe app",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "PixelPasta",
+  "license": "ISC",
+  "dependencies": {
+    "discord-image-generation": "^1.4.12",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "node-fetch": "^2.6.7"
+  }
+}
