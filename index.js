@@ -12,6 +12,8 @@ const timeoutId = setTimeout(() => controller.abort(), 4000)
 
 
 
+
+
 app.listen(port, () => {
     console.log(`Listening to ${port}`)
 })
@@ -23,9 +25,12 @@ app.get('/status', async (req, res) => {
   return res.sendStatus(200)
 })
 app.get('/search', async (req, res) => {
-if (!req.query.book) return res.redirect('https://pixibrary.pixelpasta.xyz')
+if (!req.query.book) return res.redirect('./')
+
+var fullUrl = req.protocol + '://' + req.get('host') ;
+console.log(fullUrl)
     
- response = await fetch(`https://Pixibrary.itsmepixelpasta.repl.co/e/?query=${req.query.book}`, )
+ response = await fetch(`${fullUrl}/e/?query=${req.query.book}`, )
  
      
 response = await response.json()
@@ -39,7 +44,7 @@ let chosen = Math.floor(Math.random() * colors.length)
 res.render('index', {uwu: colors[chosen],
 prim: primary[chosen],
 name: response.title,
-bg: `https://Pixibrary.itsmepixelpasta.repl.co/img/?book=${req.query.book}`,
+bg: `${fullUrl}/img/?book=${req.query.book}`,
 ing: response.categories,
 auth: response.authors,
 about: response.description,
@@ -51,7 +56,9 @@ console.log(response.cover_image.replaceAll("amp;", ""))
 })
 
 app.get('/img', async (req, res) => {
-    let img = await fetch(`https://Pixibrary.itsmepixelpasta.repl.co/e/?query=${req.query.book}`)
+  var fullUrl = req.protocol + '://' + req.get('host')
+  let img = await fetch(`${fullUrl}/e/?query=${req.query.book}`)
+
     img = await img.json()
     img = await fetch(img.cover_image)
     img = await img.buffer()
