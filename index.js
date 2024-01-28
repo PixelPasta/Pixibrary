@@ -29,7 +29,7 @@ if (!req.query.book) return res.redirect('./')
 
 var fullUrl = req.protocol + '://' + req.get('host') ;
 console.log(fullUrl)
-    
+    fulllUrl = fullUrl.replace("http", "https")
  response = await fetch(`${fullUrl}/e/?query=${req.query.book}`, )
  
      
