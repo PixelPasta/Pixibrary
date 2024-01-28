@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const fetch = require('node-fetch')
-const port = process.env.port || 3333
+const port = process.env.PORT || 3000
 app.set('view engine', 'ejs')
 
 
