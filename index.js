@@ -28,8 +28,10 @@ app.get('/search', async (req, res) => {
 if (!req.query.book) return res.redirect('./')
 
 var fullUrl = req.protocol + '://' + req.get('host') ;
-console.log(fullUrl)
+
     fulllUrl = fullUrl.replace("http", "https")
+
+    console.log(fullUrl)
  response = await fetch(`${fullUrl}/e/?query=${req.query.book}`, )
  
      
