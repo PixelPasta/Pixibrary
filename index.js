@@ -27,9 +27,9 @@ app.get('/status', async (req, res) => {
 app.get('/search', async (req, res) => {
 if (!req.query.book) return res.redirect('./')
 
-var fullUrl = req.protocol + '://' + req.get('host') ;
+var fullUrl =   'https://' + req.get('host') ;
 
-    fulllUrl = fullUrl.replace("http", "https")
+
 
     console.log(fullUrl)
  response = await fetch(`${fullUrl}/e/?query=${req.query.book}`, )
@@ -58,7 +58,7 @@ console.log(response.cover_image.replaceAll("amp;", ""))
 })
 
 app.get('/img', async (req, res) => {
-  var fullUrl = req.protocol + '://' + req.get('host')
+  var fullUrl = 'https://' + req.get('host')
   let img = await fetch(`${fullUrl}/e/?query=${req.query.book}`)
 
     img = await img.json()
